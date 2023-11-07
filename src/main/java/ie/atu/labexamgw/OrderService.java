@@ -6,12 +6,17 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class OrderService {
-    private Order order;
+    public Order myOrder;
+
+    public OrderService(){
+        this.myOrder = new Order();
+    }
+
     public static void createmyOrder(Order order){
-        order = new Order();
+        myOrder = order;
     }
 
     public Object getOrderById(int id){
-        return order.getOrderId();
+        return order;
     }
 }
